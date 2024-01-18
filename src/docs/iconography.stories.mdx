@@ -1,0 +1,25 @@
+import { Meta, Title, IconGallery, IconItem, Unstyled } from "@storybook/blocks";
+import { icons } from "lucide-react";
+import styles from "./docs.modules.css";
+
+<Meta title="Design Tokens/Iconography" />
+
+# Iconography
+
+These icons are derived from `lucide-react`
+---
+
+
+--
+<div className={styles['sbdocs-content-test']}>
+<IconGallery style={{ maxWidth: '100%' }}>
+  {Object.entries(icons).map(([name], i) => {
+    const LucideIcon = icons[name];
+    return (
+      <IconItem name={name} key={i} >
+        <LucideIcon key={i} size={24} className={"m-11"} />
+      </IconItem>
+    );
+  })}
+</IconGallery>
+</div>

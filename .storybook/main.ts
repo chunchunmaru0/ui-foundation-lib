@@ -7,6 +7,10 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    "@storybook/addon-themes",
+    "@storybook/addon-backgrounds",
+    "storybook-dark-mode",
+    "storybook-addon-pseudo-states",
   ],
   framework: {
     name: "@storybook/nextjs",

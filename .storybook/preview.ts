@@ -3,7 +3,14 @@ import "../src/app/globals.css"; // replace with the name of your tailwind css f
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { themes } from "@storybook/theming";
 
+const siteMetadata = {
+  brandTitle: 'Chunchunmaru UI Foundation',
+  brandUrl: '/',
+  brandTarget: '_self',
+};
+
 const preview: Preview = {
+  
   parameters: {
     nextjs: {
       appDirectory: true,
@@ -14,14 +21,16 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+      expanded: true
     },
-    // darkMode: {
-    //   // Override the default dark theme
-    //   dark: { ...themes.dark, appBg: "black" },
-    //   // Override the default light theme
-    //   light: { ...themes.normal, appBg: "red" },
-    // },
+      darkMode: {
+      dark: { ...themes.dark, ...siteMetadata },
+      light: { ...themes.light, ...siteMetadata },
+    },
+
+
   },
+
 };
 export const decorators = [
   withThemeByDataAttribute({

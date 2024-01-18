@@ -1,18 +1,39 @@
 import { Meta, Title, IconGallery, IconItem, Unstyled } from "@storybook/blocks";
 import { icons } from "lucide-react";
-import styles from "./docs.modules.css";
 
 <Meta title="Design Tokens/Iconography" />
 
 # Iconography
 
-These icons are derived from `lucide-react`
+These icons are derived from `lucide-react` 
 ---
+## Usage 
+
+```jsx
+import { Camera } from 'lucide-react';
+
+// Usage
+const App = () => {
+  return <Camera color="red" size={48} />;
+};
+
+export default App;
+```
+
+## Props
+```
+| name                  | type      | default      |
+| --------------------- | --------- | ------------ |
+| `size`                | *number*  | 24           |
+| `color`               | *string*  | currentColor |
+| `strokeWidth`         | *number*  | 2            |
+| `absoluteStrokeWidth` | *boolean* | false        |
+
+```
 
 
---
-<div className={styles['sbdocs-content-test']}>
-<IconGallery style={{ maxWidth: '100%' }}>
+
+<IconGallery>
   {Object.entries(icons).map(([name], i) => {
     const LucideIcon = icons[name];
     return (
@@ -22,4 +43,33 @@ These icons are derived from `lucide-react`
     );
   })}
 </IconGallery>
-</div>
+
+
+
+### Dynamic import in NextJS
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  transpilePackages: ['lucide-react'] // add this
+}
+module.exports = nextConfig
+```
+You can then start using it:
+```jsx
+import dynamic from 'next/dynamic'
+import { LucideProps } from 'lucide-react';
+import dynamicIconImports from 'lucide-react/dynamicIconImports';
+
+interface IconProps extends LucideProps {
+  name: keyof typeof dynamicIconImports;
+}
+
+const Icon = ({ name, ...props }: IconProps) => {
+  const LucideIcon = dynamic(dynamicIconImports[name])
+
+  return <LucideIcon {...props} />;
+};
+
+export default Icon;
+```

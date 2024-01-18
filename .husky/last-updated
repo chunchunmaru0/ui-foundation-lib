@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "Running last-updated script..."
+echo "Current working directory: $(pwd)"
+
+START="<div className='float-right italics bg-muted'>Last modified: "
+END="</div>"
+# Get a list of staged files
+FILES=$(git diff --staged --name-only | grep -e 'src/.*\.mdx$')
+echo "Files to process: $FILES"
+
+for file in $FILES; do
+  echo "Processing file: $file"
+  DATE=$(date '+%Y-%m-%d')
+  # Use sed to handle both LF and CRLF line endings
+  sed -i -E "s,($START).*($END),\1$DATE$END," "$file" && git add "$file"
+done
+
+# git diff-index --quiet --cached HEAD || git commit -m "Auto: lastmod" --no-verify

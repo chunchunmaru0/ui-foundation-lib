@@ -3,18 +3,17 @@
 echo "Running last-updated script..."
 echo "Current working directory: $(pwd)"
 
-git log -1 --format=%s HEAD | grep -q "^Auto: " && exit
-
-START="<div class=lastmod>Last modified: "
+START="<div>Last modified: "
 END="</div>"
-
-FILES=$(git diff --name-only HEAD^ HEAD | grep -x 'foo/.*\.mdx')
+# Get a list of staged files
+FILES=$(git diff --staged --name-only | grep -e 'src/.*\.mdx$')
 echo "Files to process: $FILES"
 
-grep -xl "$START.*$END" $FILES </dev/null | while read file; do
+for file in $FILES; do
   echo "Processing file: $file"
   DATE=$(date '+%Y-%m-%d')
-  sed -i "s,^\($START\).*\($END\),\1$DATE\2," $file && git add $file
+  # Use sed to handle both LF and CRLF line endings
+  sed -i -E "s,($START).*($END),\1$DATE$END," "$file" && git add "$file"
 done
 
-git diff-index --quiet --cached HEAD || git commit -m --no-verify "Auto: lastmod"
+git diff-index --quiet --cached HEAD || git commit -m "Auto: lastmod" --no-verify

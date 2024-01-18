@@ -2,7 +2,6 @@ import colorPalette from "tailwindcss/colors";
 import { kebabToTitleCase } from "./kebabToTitleCase";
 import dlv from "dlv";
 import { ColorPalette, ColorItem } from "@storybook/blocks";
-import { PiIcon } from "lucide-react";
 
 export function ColorPaletteReference({ colors }) {
   return (

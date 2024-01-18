@@ -17,7 +17,7 @@ export function ColorPaletteReference({ colors }) {
                 (variant) => ({
                   name: variant,
                   value: dlv(colorPalette, [value, variant]),
-                })
+                }),
               )
             : Object.keys(value).map((name) => ({
                 name,
@@ -30,6 +30,7 @@ export function ColorPaletteReference({ colors }) {
               acc[name] = value;
               return acc;
             }, {})}
+            key={i}
           />
         );
       })}

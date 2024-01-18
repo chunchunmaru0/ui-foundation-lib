@@ -28,7 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/utils/colorPaletteRef.js"
+    "src/docs/utils/colorPaletteRef.js"
   ],
   "exclude": ["node_modules"]
 }

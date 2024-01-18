@@ -16,4 +16,4 @@ for file in $FILES; do
   sed -i -E "s,($START).*($END),\1$DATE$END," "$file" && git add "$file"
 done
 
-git diff-index --quiet --cached HEAD || git commit -m "Auto: lastmod" --no-verify
+# git diff-index --quiet --cached HEAD || git commit -m "Auto: lastmod" --no-verify

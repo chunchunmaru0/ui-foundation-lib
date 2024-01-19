@@ -3,6 +3,12 @@
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "dist",
+    "declarationDir": "dist",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -11,12 +17,12 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
-        "name": "next"
-      }
+        "name": "next",
+      },
     ],
     "baseUrl": "./src",
     "paths": {
@@ -30,5 +36,5 @@
     ".next/types/**/*.ts",
     "src/docs/utils/colorPaletteRef.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "tmp", "*/.stories.*"],
 }

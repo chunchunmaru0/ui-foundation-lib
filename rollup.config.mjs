@@ -5,12 +5,12 @@ import pkg from "./package.json" assert { type: "json" };
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import sizes from "rollup-plugin-sizes";
-// import visualizer from "rollup-plugin-visualizer";
+import { visualizer } from "rollup-plugin-visualizer";
 import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
 import PeerDepsExternalPlugin from "rollup-plugin-peer-deps-external";
+import progress from "rollup-plugin-progress";
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default [
   {
     input: "src/index.ts",
@@ -37,9 +37,11 @@ export default [
         extract: "index.css",
         sourceMap: true,
       }),
+      progress({ clearLine: true }),
       sizes(),
+      visualizer(),
     ],
-    external: ["react", "react-dom"],
+    external: Object.keys(pkg.peerDependencies),
     onwarn: (warning, warn) => {
       //   if (warning.code === "UNUSED_EXTERNAL_IMPORT") return;
       warn(warning);

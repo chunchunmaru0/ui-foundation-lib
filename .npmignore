@@ -21,6 +21,7 @@ tailwind.config.ts
 tsconfig.json
 src
 public 
+storybook-static
 
 # GPT Generated
 # Exclude development and build files

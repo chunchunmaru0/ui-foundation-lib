@@ -40,3 +40,4 @@ next-env.d.ts
 /dist
 
 .npmrc
+stats.html

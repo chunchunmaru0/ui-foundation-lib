@@ -139,3 +139,10 @@ import { Button } from "@chunchunmaru0/ui-foundation-lib/dist/component/Button"
 ```
 so that we don't need to import entire package just for button and to reduce the bundle size when importing,
 we need to have explicitly write the input path on our `rollup.config.mjs` to produce such output.
+
+
+### TODO
+
+- `Typography` Documentation
+- SemVer Tags/Release
+- Github Actions- CI/CD

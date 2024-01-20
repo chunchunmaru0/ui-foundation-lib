@@ -1,3 +1,4 @@
+import React from "react";
 import tailwindDefaultConfig from "tailwindcss/defaultConfig.js";
 import resolveConfig from "tailwindcss/resolveConfig.js";
 

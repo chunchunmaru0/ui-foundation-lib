@@ -47,4 +47,11 @@ export default [
       warn(warning);
     },
   },
+  {
+    input: "tailwind.config.ts",
+    output: [
+      { file: "dist/tailwind.config.js", format: "cjs", sourcemap: true },
+    ],
+    plugins: [typescript()],
+  },
 ];

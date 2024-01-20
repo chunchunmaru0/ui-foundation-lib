@@ -36,5 +36,14 @@
     ".next/types/**/*.ts",
     "src/docs/utils/colorPaletteRef.js",
   ],
-  "exclude": ["node_modules", "tmp", "**/*.stories.*"], // Add Test Cases if Needed
+  "exclude": [
+    "node_modules",
+    "tmp",
+    "**/*.stories.*",
+    "build",
+    "dist",
+    ".next",
+    "./src/app/",
+    "./src/docs",
+  ],
 }

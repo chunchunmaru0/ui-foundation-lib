@@ -1,0 +1,65 @@
+# Base
+.eslintignore
+.eslintrc.json
+.gitignore
+.npmrc
+.npmignore
+.nvmrc
+.prettierrc
+.next
+.husky
+
+components.json
+next-env.d.ts
+next.config.js
+package-lock.json
+package.json
+postcss.config.js
+rollup.config.mjs
+stats.html 
+tailwind.config.ts
+tsconfig.json
+src
+public 
+
+# GPT Generated
+# Exclude development and build files
+__tests__
+.storybook
+node_modules
+coverage
+docs
+examples
+config
+scripts
+*.config.js
+*.md
+*.log
+*.tsbuildinfo
+
+# Exclude files used for development
+.editorconfig
+.gitignore
+.eslint*
+.prettier*
+husky.config.js
+lint-staged.config.js
+package-lock.json
+tsconfig.json
+jest.config.js
+rollup.config.js
+storybook-static
+
+# Exclude unnecessary files
+*.DS_Store
+*.log
+*.tgz
+*.yarn*
+*.vscode
+*.idea
+*.swp
+*.bak
+
+# Include only the dist folder
+!dist
+!README.md

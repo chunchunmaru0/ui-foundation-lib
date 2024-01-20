@@ -1,4 +1,4 @@
-This is a Foundation UI Library project for React Application by @chunchunmaru
+This is a Foundation UI Library project for React Application by [@chunchunmaru](https://github.com/chunchunmaru0/)
 Built in isolation with Storybook and bundled with rollup!
 
 ## What is it?
@@ -20,7 +20,7 @@ And Customize to your liking. More on their [docs](https://ui.shadcn.com/docs/)
 
 ## Development
 
-- To run storybook on development, App will run on [http://localhost:6006](http://localhost:6006):
+- To run storybook on development, App will run on [http://localhost:6006](http://localhost:6006)
 
 ```bash
 npm run storybook
@@ -44,7 +44,7 @@ If you are creating/updating docs on `.mdx` files, it will also update the lates
 
 I have created a **Custom Script** that will insert the `last modified date` of the documentation, making it helpful to track the last modified changes.
 
-- Bash Script is inside `.husky/last-updated`
+Bash Script is inside `.husky/last-updated`
 
 ## Installation
 
@@ -76,7 +76,7 @@ export default function Home() {
 ```
 I think the import also works if you import directly on your `layout.tsx`.
 ---
-According to tailwind [docs]() this should work, but it's throwing me an error when importing tw config.
+According to tailwind [docs](https://tailwindcss.com/docs/functions-and-directives#config) this should work, but it's throwing me an error when importing tw config.
 
 ```
 @config "\ui-foundation-lib\dist\tailwind.config.js";
@@ -119,7 +119,7 @@ Since, this project is React Component Library, `react` and `react-dom` are inst
 
 I've `next` as `peerDependencies` since I'm planning to make reusable component that can be used on `nextJS` application like `next/navigation` and other **server component** and **server actions**.
 
-I've left `app` dir as it is, just incase someone one to develop it that way. But I'm planning on chaning the `scripts`.
+I've left `app` dir as it is, just incase someone wants to develop it that way. But I'm planning on changing the `scripts`.
 
 ## Bundling with Roll Up
 

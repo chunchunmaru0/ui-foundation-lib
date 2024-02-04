@@ -44,6 +44,6 @@
     "dist",
     ".next",
     "./src/app/",
-    "./src/docs",
+    "./src/docs"
   ],
 }

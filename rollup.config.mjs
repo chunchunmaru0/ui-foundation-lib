@@ -50,7 +50,7 @@ export default [
   {
     input: "tailwind.config.ts",
     output: [
-      { file: "dist/tailwind.config.js", format: "cjs", sourcemap: true },
+      { file: "dist/tailwind.config.js", format: "esm", sourcemap: true },
     ],
     plugins: [typescript()],
   },

@@ -1,5 +1,5 @@
 {
-  "name": "@chunchunmaru/ui-foundation-lib",
+  "name": "@chunchunmaru0/ui-foundation-lib",
   "version": "0.1.0",
   "private": true,
   "main": "dist/cjs/index.js",
@@ -14,7 +14,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "ts-version": "tsc -v"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
